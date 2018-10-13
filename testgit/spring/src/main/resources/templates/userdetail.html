@@ -1,0 +1,77 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <style type="text/css">
+        thead {
+            color: green
+        }
+
+        tbody {
+            color: blue;
+            height: 50px
+        }
+
+        tfoot {
+            color: red
+        }
+    </style>
+
+</head>
+<body>
+<form action="/user/update" method="post">
+    <h2 align="center">用户详情</h2>
+    <table width="100%" border=1>
+        <thead>
+        <tr>
+
+            <th bgcolor="aqua">姓名</th>
+            <th bgcolor="aqua">性别</th>
+            <th bgcolor="aqua">年龄</th>
+            <th bgcolor="aqua">电话</th>
+            <th bgcolor="aqua">邮箱</th>
+            <th bgcolor="aqua">备注</th>
+            <th bgcolor="aqua">创建时间</th>
+            <th bgcolor="aqua">修改时间</th>
+
+        </tr>
+        </thead>
+        <tr>
+            <input required="required" style="text-align: center" type="hidden" name="id" th:value="${user.id}"/>
+            <td align="center" bgcolor="ivory"><input required="required" style="text-align: center" type="text"
+                                                      name="name" th:value="${user.name}"/></td>
+            <td align="center" bgcolor="ivory"><input required="required" style="text-align: center" type="text"
+                                                      name="gender" th:value="${user.gender}"/></td>
+            <td align="center" bgcolor="ivory"><input required="required" style="text-align: center" type="text"
+                                                      name="age" th:value="${user.age}"/></td>
+            <td align="center" bgcolor="ivory"><input required="required" style="text-align: center" type="text"
+                                                      name="phone" th:value="${user.phone}"/></td>
+            <td align="center" bgcolor="ivory"><input required="required" style="text-align: center" type="text"
+                                                      name="email" th:value="${user.email}"/></td>
+            <td align="center" bgcolor="ivory"><input required="required" style="text-align: center" type="text"
+                                                      name="remark" th:value="${user.remark}"/></td>
+            <td align="center" bgcolor="ivory"><input disabled="disabled" required="required" style="text-align: center"
+                                                      type="text"
+                                                      name="createTime"
+                                                      th:value="${#dates.format(user.createTime,'yyyy-MM-dd HH:mm:ss')}"/>
+            </td>
+            <td align="center" bgcolor="ivory"><input disabled="disabled" required="required" style="text-align: center"
+                                                      type="text"
+                                                      name="lastModified"
+                                                      th:value="${#dates.format(user.lastModified,'yyyy-MM-dd HH:mm:ss')}"/>
+            </td>
+
+
+        </tr>
+    </table>
+    <table width="100%">
+        <tr>
+            <td align="center"><input style="width: 100px" type="submit" value="修改"/></td>
+        </tr>
+    </table>
+
+</form>
+</body>
+
+
+</body>
+</html>
