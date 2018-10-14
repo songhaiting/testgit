@@ -5,5 +5,11 @@
 =======
 aaaaaaa
 bbbbbbbb
+<<<<<<< HEAD
 >>>>>>> master
 
+=======
+111111
+222222
+aaaaaa
+>>>>>>> origin
